@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+
+  frontend:
+    image: ugurkontel/phptodo:frontend
+    ports:
+      - 3000:80
+
+  backend:
+    image: ugurkontel/phptodo:backend
+    ports:
+      - 5000:80
+
+  database:
+    image: ugurkontel/phptodo:database
+    environment:
+      MYSQL_DATABASE: todo_app
+      MYSQL_USER: todo_admin
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      # MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+    secrets:
+      - mysql_password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=database
+      - PMA_PORT=3306
+    depends_on:
+      - database
+
+networks:
+  todo-network:
+    driver: overlay
+
+secrets:
+  mysql_password:
+    external: true
