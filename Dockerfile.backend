@@ -57,4 +57,4 @@ COPY ./api /var/www/html
 RUN rm -rf /var/www/html/index.html
 
 # start Apache2 on image start
-CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
+CMD export DB_PASSWORD=$(cat /run/secrets/mysql_password) && /usr/sbin/apache2ctl -DFOREGROUND

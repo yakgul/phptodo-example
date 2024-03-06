@@ -10,6 +10,8 @@ services:
     image: ugurkontel/phptodo:backend
     ports:
       - 5000:80
+    secrets:
+      - mysql_password
 
   database:
     image: ugurkontel/phptodo:database
