@@ -17,7 +17,6 @@ services:
       MYSQL_DATABASE: todo_app
       MYSQL_USER: todo_admin
       MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
-      # MYSQL_PASSWORD: password
       MYSQL_RANDOM_ROOT_PASSWORD: 1
     secrets:
       - mysql_password
