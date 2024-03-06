@@ -22,6 +22,8 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
     secrets:
       - mysql_password
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -40,3 +42,7 @@ networks:
 secrets:
   mysql_password:
     external: true
+
+volumes:
+  mysql-data:
+    driver: local
