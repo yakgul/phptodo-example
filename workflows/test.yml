@@ -1,13 +1,14 @@
 name: Ilk Test Pipeline
 
-on: 
-    push :
+on:
+    push:
         branches:
-            -main
-
+            - main
+    workflow_dispatch:
+    
 jobs:
     bek_ilk_job:
         runs-on: ubuntu-latest
         steps:
-            - name: "Hello World"
-            run: echo "Hello World"
+            - name: Hello World
+              run: echo "Hello World"
