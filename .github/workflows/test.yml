@@ -4,11 +4,15 @@ on:
     push:
         branches:
             - main
+
     workflow_dispatch:
     
 jobs:
     bek_ilk_job:
         runs-on: ubuntu-latest
         steps:
-            - name: Hello World
-              run: echo "Hello World"
+            - run: docker image build -t yusuf/phptodo-example:frontend -f ./Dockerfile.frontend
+              name: Step 1
+
+            - name: Deneme
+              run: ls -al
