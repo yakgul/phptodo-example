@@ -25,3 +25,9 @@ jobs:
             with:
               name: Report
               path: anan.txt  
+    artifacts-deneme-job2:
+      needs: artifacts-deneme-job
+      runs-on: ubuntu-latest
+      steps:
+        - name: anan 3
+          run: echo "asd"
