@@ -30,4 +30,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: anan 3
-          run: echo "asd"
+          uses: actions/download-artifact@v4
+          with:
+            name: Rapor
+            path: .
+
+        - name: Test
+          run: ls -la  
