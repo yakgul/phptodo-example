@@ -24,7 +24,8 @@ jobs:
             uses: actions/upload-artifact@v4
             with:
               name: Report
-              path: anan.txt  
+              path: anan.txt
+                
     artifacts-deneme-job2:
       needs: artifacts-deneme-job
       runs-on: ubuntu-latest
@@ -36,4 +37,4 @@ jobs:
             path: .
 
         - name: Test
-          run: ls -la  
+          run: ls -al  
