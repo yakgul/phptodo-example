@@ -19,3 +19,9 @@ jobs:
            
           - name: Kontr
             run: cat anan.txt  
+           
+          - name: Artf
+            uses: actions/upload-artifact@v4
+            with:
+              name: Report
+              path: anan.txt  
