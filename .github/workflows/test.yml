@@ -23,9 +23,9 @@ jobs:
           - name: Artf
             uses: actions/upload-artifact@v4
             with:
-              name: Report
+              name: Rapor
               path: anan.txt
-                
+
     artifacts-deneme-job2:
       needs: artifacts-deneme-job
       runs-on: ubuntu-latest
